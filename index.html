@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anusha Say's Hii</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/87f4045376.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/anu.png" class="logo" />
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Developer</p>
+                <h1>
+                    Hi, I'm <span>Anusha S</span> <br />
+                    From Manglore
+                </h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="copyright">
+        <p>
+            Copyright © Anu <i class="fa-solid fa-heart"></i> 2024 All rights
+            are preserved
+        </p>
+    </div>
+    </div>
+
+    <script>
+        const form = document.forms["submit-to-google-sheet"];
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            fetch(
+                "https://script.google.com/macros/s/AKfycby0RG-FrYRCL5Xc9OunLfzynCh6orrRuhW6v8KGH_ipzKZDBakPpu29aqXuKSIzWYiL/exec",
+                {
+                    method: "POST",
+                    body: new FormData(form),
+                }
+            )
+                .then((response) => response.text())
+                .then((text) => console.log(text))
+                .catch((error) => console.error("Error!", error.message));
+        });
+    </script>
+</body>
+
+</html>
